@@ -1,0 +1,7 @@
+{
+  "name": "perti",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
