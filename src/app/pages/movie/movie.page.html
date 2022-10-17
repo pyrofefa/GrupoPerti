@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>    
+    </ion-buttons>
+    <ion-title>
+      {{ movie.name }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>    
+    <img *ngIf="movie.image == null" alt="{{ movie.name }}" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+    <img *ngIf="movie.image != null" alt="{{ movie.name }}" src="{{ movie.image.original }}" />
+    <ion-card-header>
+      <ion-card-title>{{ movie.name }}</ion-card-title>
+      <ion-card-subtitle>{{ movie.show }}</ion-card-subtitle>
+      <ion-card-subtitle>{{ movie.date }}</ion-card-subtitle>
+    </ion-card-header>
+      <ion-card-content>
+      {{ strip(br2nl(movie.summary)) }}   
+    </ion-card-content>
+  </ion-card>
+</ion-content>

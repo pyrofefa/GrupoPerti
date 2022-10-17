@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Iniciar sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="login()" [formGroup]="credentials">
+    <div class="input-group">
+      <ion-item>
+        <ion-input type="text" placeholder="Username" formControlName="username"></ion-input>
+      </ion-item>
+      <div *ngIf="(username.dirty || username.touched) && username.errors" class="errors">
+        <span *ngIf="username.errors?.required">Username es requerido</span>
+      </div>
+      <ion-item>
+        <ion-input type="password" placeholder="Password" formControlName="password" [type]="showPassword ? 'text' : 'password'" required></ion-input>
+        <ion-icon slot="end" [name]="passwordToggleIcon" (click)="togglePassword()"></ion-icon>
+      </ion-item>
+      <div *ngIf="(password.dirty || password.touched) && password.errors" class="errors">
+        <span *ngIf="password.errors?.required">Se requiere contraseña</span>
+        <span *ngIf="password.errors?.minlength">La contraseña debe tener 6 caracteres</span>
+      </div>
+    </div>
+      <ion-button type="submit" color='dark' expand="block" [disabled]="!credentials.valid">Iniciar sesión</ion-button>
+      <br>
+      <ion-button (click)="register()" color='secondary' expand="block">Registrar</ion-button>
+  </form>
+</ion-content>

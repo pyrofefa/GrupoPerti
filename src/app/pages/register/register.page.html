@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-button (click)="atras()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>    
+    </ion-buttons>
+    <ion-title>
+      Registro
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form #formulario="ngForm" (ngSubmit)="save()">
+    <ion-item>
+      <ion-label><strong>Username</strong></ion-label>      
+      <ion-input name='username' type="text" [(ngModel)]="captura.username" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><strong>Password</strong></ion-label>      
+      <ion-input name='password' type="password" [(ngModel)]="captura.password" [type]="showPassword ? 'text' : 'password'" required></ion-input>
+      <ion-icon slot="end" [name]="passwordToggleIcon" (click)="togglePassword()"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label><strong>Correo</strong></ion-label>      
+      <ion-input name='Correo' type="text" [(ngModel)]="captura.correo" required></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-label><strong>Nombre</strong></ion-label>      
+      <ion-input name='nombre' type="text" [(ngModel)]="captura.nombre" required></ion-input>
+    </ion-item>      
+    <ion-item>
+      <ion-label><strong>Apellido paterno</strong></ion-label>      
+      <ion-input name='apellido_paterno' [(ngModel)]="captura.apellido_paterno" type="text" required></ion-input>
+    </ion-item>      
+    <ion-item>
+      <ion-label><strong>Apellido materno</strong></ion-label>      
+      <ion-input name='apellido_materno' [(ngModel)]="captura.apellido_materno" type="text" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><strong>Dirección</strong></ion-label>      
+      <ion-input name='direccion' [(ngModel)]="captura.direccion" type="text" required></ion-input>
+    </ion-item>      
+    <ion-item>
+      <ion-label><strong>Número</strong></ion-label>      
+      <ion-input name='numero' [(ngModel)]="captura.numero" type="number" required></ion-input>
+    </ion-item>      
+    <ion-item>
+      <ion-label><strong>C.P</strong></ion-label>      
+      <ion-input name='cp' [(ngModel)]="captura.cp" type="number" required></ion-input>
+    </ion-item>     
+    <ion-item>
+      <ion-label><strong>Ciudad</strong></ion-label>      
+      <ion-input name='ciudad' [(ngModel)]="captura.ciudad" type="text" required></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-label><strong>Estado</strong></ion-label>      
+      <ion-input name='estado' [(ngModel)]="captura.estado" type="text" required></ion-input>
+    </ion-item>        
+    <ion-button expand="block" [disabled]='formulario.invalid' type="submit">Registrar</ion-button>
+  </form>
+</ion-content>

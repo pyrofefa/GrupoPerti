@@ -1,0 +1,19 @@
+<ion-menu type="overlay" menuId="first" contentId="main" side="end">
+  <ion-header>
+      <ion-toolbar color="primary">
+          <ion-title>Menú</ion-title>
+      </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle auto-hide="false">         
+        <ion-item routerDirection="'root'" (click)="presentAlert()">
+            <ion-icon slot="start" name="close-circle"></ion-icon>
+            <ion-label>
+                Cerrar sesion
+            </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>
